@@ -1,0 +1,28 @@
+<div class="main-container">
+    <div class="title-container">
+        <h1>Livros Aleatórios</h1>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autores</th>
+                    <th>Ano de Publicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (book of data; track book.key) {
+                    <tr>
+                        <td>{{ book.key }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ formatAuthors(book.authors) }}</td>
+                        <td>{{ book.first_publish_year || 'N/A' }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
